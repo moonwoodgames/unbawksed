@@ -1,1 +1,0 @@
-window.shortNumber = function(number) { return Intl.NumberFormat('en-US', { notation: "compact", maximumFractionDigits: 2, minimumFractionDigits: 2, roundingMode: "floor" }).format(number / 100.0); }
