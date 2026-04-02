@@ -1,6 +1,6 @@
 /*:
  * @target MZ
- * @plugindesc Skips title or auto-loads Save 1 and triggers a Common Event.
+ * @plugindesc Skips title or auto-loads Save 0 (auto-save) and triggers a Common Event.
  * @author Moonwood Games
  * * @param CommonEventID
  * @text Common Event ID
@@ -40,7 +40,8 @@
                 $gameTemp.reserveCommonEvent(40);
                 SceneManager.goto(Scene_Map);
 				AudioManager.playBgm({name: 'Unbawksed1', volume: $gameVariables.value(337), pitch: 100});
-				$gameVariables.setValue(336, 8);
+				//Update this variable when adding new chicken sounds
+				$gameVariables.setValue(336, 20);
             })
             .catch(() => {
                 // If loading fails for some reason, fallback to New Game
@@ -52,6 +53,7 @@
     Scene_Boot.prototype.startNewGameInBoot = function() {
         DataManager.setupNewGame();
         SceneManager.goto(Scene_Map);
-		$gameVariables.setValue(336, 8);
+		//Update this variable when adding new chicken sounds
+		$gameVariables.setValue(336, 20);
     };
 })();
