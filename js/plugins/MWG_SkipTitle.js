@@ -39,7 +39,8 @@
                 // Trigger the Common Event for idle processing
                 $gameTemp.reserveCommonEvent(40);
                 SceneManager.goto(Scene_Map);
-				AudioManager.playBgm({name: 'Unbawksed1', volume: $gameVariables.value(337), pitch: 100});
+				AudioManager.playBgm({name: 'Unbawksed' + $gameVariables.value(41), volume: $gameVariables.value(337), pitch: 100});
+				AudioManager._bgmBuffer._loop = false;
 				//Update this variable when adding new chicken sounds
 				$gameVariables.setValue(336, 20);
             })

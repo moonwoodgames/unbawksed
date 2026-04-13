@@ -48,10 +48,10 @@
                 $gameSystem.onBeforeSave();
                 DataManager.saveGame(0)
                     .then(() => {
-                        console.log("Chicken Empire: Autosave Successful. Timestamp: " + timestampInSeconds);
+                        console.log("Autosave Successful. Timestamp: " + timestampInSeconds);
                     })
                     .catch(() => {
-                        console.warn("Chicken Empire: Autosave Failed.");
+                        console.warn("Autosave Failed.");
                     });
             }
         }
