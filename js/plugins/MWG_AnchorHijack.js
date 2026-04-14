@@ -30,10 +30,19 @@
         // Run the original logic first
         _Sprite_Picture_updateOrigin.call(this);
         
-        // If the current picture matches the target origin, override the anchor
-        if (this.picture() && this.picture().origin() === targetOrigin) {
-            this.anchor.x = 0.5; // Horizontal Center
-            this.anchor.y = 1.0; // Vertical Bottom
+        if (this.picture()) {
+            const currentOrigin = this.picture().origin();
+            
+            // Existing Hijack (Bottom-Center)
+            if (currentOrigin === targetOrigin) {
+                this.anchor.x = 0.5; // Horizontal Center
+                this.anchor.y = 1.0; // Vertical Bottom
+            } 
+            // NEW Hijack (Top-Center)
+            else if (currentOrigin === 2) {
+                this.anchor.x = 0.5; // Horizontal Center
+                this.anchor.y = 0.0; // Vertical Top
+            }
         }
     };
 })();
